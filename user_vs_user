@@ -1,0 +1,44 @@
+import random
+
+# выбор фигуры пользователем
+print("Welcome to our game!")
+roundGame = 1
+while True:
+    print(f"\nRound", roundGame)
+    roundGame += 1
+    user1_choice = int(input("User1, please enter your choice: (0 - rock, 1 - scissors, 2 - paper): "))
+    # print(type(user1_choice))
+    while user1_choice < 0 or user1_choice > 2:
+        print("Wrong Answer. Please try again.")
+        user_choice = int(input("User1, please enter your choice: (0 - rock, 1 - scissors, 2 - paper): "))
+
+    print("User1 choice is:", user1_choice)
+
+    user2_choice = int(input("User2, please enter your choice: (0 - rock, 1 - scissors, 2 - paper): "))
+    # print(type(user_choice))
+    while user2_choice < 0 or user2_choice > 2:
+        print("Wrong Answer. Please try again.")
+        user2_choice = int(input("User2, please enter your choice: (0 - rock, 1 - scissors, 2 - paper): "))
+
+    print("User2 choice is:", user2_choice)
+
+
+
+    print("Results:")
+    if user1_choice == user2_choice:
+        print("draw!")
+    elif user1_choice == 0:
+        if user2_choice == 1:
+            print("Win User1!")
+        if user2_choice == 2:
+            print("Win User2!")
+    elif user1_choice == 1:
+        if user2_choice == 0:
+            print("Win User2!")
+        if user2_choice == 2:
+            print("Win User1!")
+    elif user1_choice == 2:
+        if user2_choice == 0:
+            print("Win User1!")
+        if user2_choice == 1:
+            print("Win User2!")
